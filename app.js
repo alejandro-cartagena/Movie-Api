@@ -64,8 +64,8 @@ async function searchMovie(e) {
     searchField.value = ""  // Clears the input field 
 
     try {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=902a2b31&s=${searchValue}&type=movie&plot=short`)
-        const data = await res.json()  // Data from the api request
+        const res = await fetch(`https://www.omdbapi.com/?apikey=902a2b31&s=${searchValue}&type=movie&plot=short`); // Replace http with https
+        const data = await res.json(); // Data from the API request
 
         let moviesArray = data.Search  // Array of movies with basic data
 
