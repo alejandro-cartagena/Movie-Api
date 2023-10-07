@@ -345,6 +345,10 @@ form {
     .search-btn, .input-text {
         font-size: 0.75rem;
     }
+
+    h1.watch-list-title {
+        font-size: 1.65rem
+    }
 }
 
 
