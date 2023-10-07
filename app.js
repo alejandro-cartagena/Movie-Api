@@ -96,7 +96,7 @@ async function searchMovie(e) {
 
 async function getMovieData(movies) {
     const moviePromises = movies.map(async (movie) => {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=902a2b31&i=${movie.imdbID}&type=movie&plot=short`);
+        const res = await fetch(`https://www.omdbapi.com/?apikey=902a2b31&i=${movie.imdbID}&type=movie&plot=short`);
         return res.json();
     });
 
@@ -169,7 +169,7 @@ function addToWatchList(plusIconsArray) {
 }
 
 async function getSingleMovieData(movieId) {
-    const res = await fetch(`http://www.omdbapi.com/?apikey=902a2b31&i=${movieId}&type=movie&plot=short`)
+    const res = await fetch(`https://www.omdbapi.com/?apikey=902a2b31&i=${movieId}&type=movie&plot=short`)
     const data = await res.json()
     return data
 }
