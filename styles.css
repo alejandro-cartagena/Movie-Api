@@ -1,0 +1,355 @@
+* {box-sizing: border-box;}
+
+body {
+    background-color: #121212;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.disabled-icon {
+    pointer-events: none; /* Prevents the icon from being clickable */
+    opacity: 0.5; /* Reduces the opacity to visually indicate it's disabled */
+    /* You can also customize other styles as needed */
+  }
+
+.data-not-found-text {
+    font-size: 1.125rem;
+    color: #787878;
+    text-align: center;
+    width: 70%; 
+}
+
+.data-not-found {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Typography */
+
+h1 {
+    color: #FFF;
+    font-size: 2.625rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.title {
+    margin: 0;
+}
+
+.watch-list {
+    color: #FFF;
+    font-size: 0.875rem;
+}
+
+/* End of Typography */
+
+header {
+    padding: 3.475em 0;
+    background-image: url("./Images/movie-background-img.png");
+}
+
+.container {
+    margin: 0 2.625em;
+    max-width: 550px;
+}
+
+.title-watch-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.watch-list-link {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* Movie Search Input Field */
+
+form {
+    display: flex;
+}
+
+.fa-magnifying-glass {
+    color: #A5A5A5;
+    position: absolute;
+    padding: 10px;
+    padding-top: 11px;
+    width: 16px;
+    height: 16px;
+}
+
+.input-text, .search-btn, .fa-magnifying-glass{
+    margin-top: -1.25em;
+    margin-bottom: 2.625em;
+}
+
+.input-text {
+    color: #A5A5A5;
+    background-color: #2E2E2F;
+    border: none;
+    font-size: 0.875em;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    max-width: 342px;
+    padding: 10px 40px 10px 35px; /* Adjust the right padding to make space for the icon */
+    
+}
+
+.search-btn {
+    background-color: #4B4B4B;
+    color: #FFF;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875em;
+    width: 100%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+}
+
+.input-text,
+.search-btn {
+    outline: none;
+}
+
+/* Main body of page */
+
+.not-searched-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+
+.not-searched {
+    text-align: center;
+}
+
+.fa-film {
+    color: #2E2E2F;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.film-icon-subtitle {
+    font-size: 1.125em;
+    color: #2E2E2F;
+    margin: 0;
+}
+
+/* Movies Styles and Layout */
+
+/* Typography  */
+
+.fa-star,
+.movie-title {
+    margin-right: 8px;
+}
+
+.movie-title {
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.movie-data, .movie-rating {
+    font-size: 0.75rem;
+}
+
+.fa-star {
+    color: #FEC654;
+    font-size: 0.9375rem;
+}
+
+.fa-circle-plus {
+    font-size: 1rem;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.movie-plot {
+    font-size: 0.875rem;
+    color: #A5A5A5;
+    margin: 0;
+}
+
+/* End of Typography */
+
+
+.movie-poster {
+    width: 150px;
+    margin-right: 2em;
+}
+
+.movies-container {
+    color: #FFF;
+}
+
+.movie-block {
+    display: flex; 
+}
+
+.movie-title-rating,
+.movie-time-genre-watchlist {
+    display: flex;
+    align-items: center;
+}
+
+.movie-time-genre-watchlist {
+    margin-bottom: 0.75em
+}
+
+
+.movie-run-time {
+    margin-right: 18px;
+}
+
+.movie-genre {
+    margin-right: 20px;
+}
+
+.movie-line-break {
+    border: 1.5px solid #2C2C2C;
+    margin: 2em 0;
+}
+
+.movie-line-break:last-child {
+    display: none;
+}
+
+.movies-container {
+    margin-bottom: 5em;
+}
+
+
+/* Watchlist Styles */
+
+.empty-watch-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.empty-watch-list-title {
+    color: #787878;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.add-movies-container {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-list-link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.watch-list-header {
+    margin-bottom: 3em;
+}
+
+.fa-circle-minus {
+    font-size: 1rem;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (max-width: 520px) {
+    .title-watchlist-container {
+        flex-direction: column;
+    }
+
+    .search-btn {
+        width: 70%;
+    }
+
+}
+
+@media (min-width: 585px) {
+    .container {
+        margin: 0 auto
+    }
+}
+
+@media (max-width: 440px) {
+    h1.title {
+        font-size: 2rem;
+    }
+
+    a.watch-list-link {
+        font-size: 0.75rem;
+    }
+
+    .movie-poster {
+        width: 100px;
+        margin-right: 0.75em;
+    }
+
+    .movie-title {
+        font-size: 1rem;
+    }
+
+    .movie-plot {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+    h1.title {
+        font-size: 1.85rem;
+    }
+
+    a.watch-list-link {
+        font-size: 0.65rem;
+    }
+
+    .movie-poster {
+        width: 80px;
+    }
+
+    .movie-title {
+        font-size: 0.85rem;
+    }
+
+    .movie-time-genre-watchlist {
+        font-size: 0.65rem;
+    }
+
+    .search-btn, .input-text {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+
+
+
+

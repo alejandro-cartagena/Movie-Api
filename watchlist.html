@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <!-- Inter Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ac4dc93457.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="watch-list-header">
+        <div class="container header-container">
+            <div class="title-watch-list-container">
+                <h1 class="title">My Watchlist</h1>
+                <h3 class="watch-list"><a class="watch-list-link" href="./index.html">Search for movies</a></h3>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        
+        <div id="empty-watch-list" class="container empty-watch-list">
+            
+            <h3 class="empty-watch-list-title">Your watchlist is looking a little empty...</h3>
+            <div class="add-movies-container">
+                <a class="watch-list-link" href="./index.html"><i class="fa-solid fa-circle-plus"></i></a>
+                <p><a class="watch-list-link" href="./index.html">Let’s add some movies!</a></p>
+            </div>
+            
+
+        </div>
+
+        <div class="container">
+            <div id="watch-list-movies-container" class="movies-container watch-list-movies-container hidden"></div>
+        </div>
+
+    </main>
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
