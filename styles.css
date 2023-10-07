@@ -278,6 +278,11 @@ form {
     cursor: pointer;
 }
 
+.search-for-movies-link {
+    color: #FFF;
+    text-decoration: none;
+}
+
 /* Media Queries */
 
 @media (max-width: 520px) {
@@ -297,12 +302,12 @@ form {
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
     h1.title {
         font-size: 2rem;
     }
 
-    a.watch-list-link {
+    a.watch-list-link, a.search-for-movies-link {
         font-size: 0.75rem;
     }
 
@@ -348,6 +353,16 @@ form {
 
     h1.watch-list-title {
         font-size: 1.65rem
+    }
+}
+
+@media (max-width: 360px) {
+    h1.watch-list-title {
+        font-size: 1.5rem
+    }
+
+    a.search-for-movies-link {
+        font-size: 0.6rem
     }
 }
 
