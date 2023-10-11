@@ -22,10 +22,10 @@ renderWatchList(watchListArray)  // Renders the watchlist to the watchlist page
 if (watchListMoviesContainer) {
     watchListMoviesContainer.addEventListener("click", function(e) {
         const target = e.target
-    
-        if (target.classList.contains("movie-minus-icon")) {
+        // Removes watchlist when minus icon is clicked
+        if (target.classList.contains("movie-minus-icon") || target.classList.contains("fa-circle-minus") || 
+        target.classList.contains("movie-watchlist-text")) {
             const movieId = target.dataset.movieId
-    
             watchListArray = watchListArray.filter(function(movie) {
                 return movie.imdbID !== movieId
             })
@@ -64,7 +64,7 @@ async function searchMovie(e) {
     searchField.value = ""  // Clears the input field 
 
     try {
-        const res = await fetch(`https://www.omdbapi.com/?apikey=902a2b31&s=${searchValue}&type=movie&plot=short`); // Replace http with https
+        const res = await fetch(`https://www.omdbapi.com/?apikey=902a2b31&s=${searchValue}&plot=short`); // Replace http with https
         const data = await res.json(); // Data from the API request
 
         let moviesArray = data.Search  // Array of movies with basic data
@@ -123,8 +123,10 @@ function renderMoviesToScreen(moviesData) {
                 <div class="movie-time-genre-watchlist">
                     <p class="movie-run-time">${movie.Runtime}</p>
                     <p class="movie-genre">${movie.Genre}</p>
-                    <i data-movie-id="${movie.imdbID}" class="fa-solid fa-circle-plus movie-plus-icon"></i>
-                    <p class="movie-watchlist-text">Watchlist</p>
+                    <div data-movie-id="${movie.imdbID}" class="movie-plus-icon">
+                        <i data-movie-id="${movie.imdbID}" class="fa-solid fa-circle-plus"></i>
+                        <p data-movie-id="${movie.imdbID}" class="movie-watchlist-text">Watchlist</p>
+                    </div>
                 </div>
 
                 <p class="movie-plot">${movie.Plot}</p>
@@ -147,6 +149,7 @@ function renderDisabledPlusIcons(plusIconsArray) {
             watchListArray.forEach(function(movie) {
                 if (icon.dataset.movieId === movie.imdbID) {
                     icon.classList.add("disabled-icon")
+                    icon.innerHTML = `<p>Added</p>`
                 }
             })
 
@@ -162,6 +165,7 @@ function addToWatchList(plusIconsArray) {
                 watchListArray.push(movie)
                 addWatchListToLocalStorage(watchListArray)
                 icon.classList.add("disabled-icon")
+                icon.innerHTML = `<p>Added</p>`
             }
             
         })
@@ -258,8 +262,10 @@ function renderWatchListMoviesToScreen(moviesData) {
                 <div class="movie-time-genre-watchlist">
                     <p class="movie-run-time">${movie.Runtime}</p>
                     <p class="movie-genre">${movie.Genre}</p>
-                    <i data-movie-id="${movie.imdbID}" class="fa-solid fa-circle-minus movie-minus-icon"></i>
-                    <p class="movie-watchlist-text">Remove</p>
+                    <div data-movie-id="${movie.imdbID}" class="movie-minus-icon">
+                        <i data-movie-id="${movie.imdbID}" class="fa-solid fa-circle-minus"></i>
+                        <p data-movie-id="${movie.imdbID}" class="movie-watchlist-text">Remove</p>
+                    </div>
                 </div>
 
                 <p class="movie-plot">${movie.Plot}</p>

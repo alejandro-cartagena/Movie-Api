@@ -188,11 +188,23 @@ form {
     margin: 0;
 }
 
+.movie-plus-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.movie-plus-icon:hover {
+    background-color: #787878;
+}
+
 /* End of Typography */
 
 
 .movie-poster {
     width: 150px;
+    height: 225px;
+    object-fit: cover;
     margin-right: 2em;
 }
 
@@ -278,6 +290,16 @@ form {
     cursor: pointer;
 }
 
+.movie-minus-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.movie-minus-icon:hover {
+    background-color: #787878;
+}
+
 .search-for-movies-link {
     color: #FFF;
     text-decoration: none;
@@ -313,6 +335,7 @@ form {
 
     .movie-poster {
         width: 100px;
+        height: 140px;
         margin-right: 0.75em;
     }
 
@@ -337,6 +360,7 @@ form {
 
     .movie-poster {
         width: 80px;
+        height: 120px;
     }
 
     .movie-title {
